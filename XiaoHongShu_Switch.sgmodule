@@ -1,0 +1,16 @@
+#!name=小红书-日常去广告(投手开关)
+#!desc=日常看小红书时【开启】此模块去广告；做投手需要看竞品广告或登录聚光后台时，【关闭】此模块即可！
+#!category=自定义
+
+[Rule]
+# 商业与聚光后台绝对直连保证
+DOMAIN-SUFFIX,ad.xiaohongshu.com,DIRECT
+DOMAIN-SUFFIX,business.xiaohongshu.com,DIRECT
+
+# 拦截小红书搜索流广告与推荐位
+URL-REGEX,^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d+\/search\/notes\/recommend_info,REJECT
+URL-REGEX,^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d+\/(tag\/)?ads,REJECT
+
+[MITM]
+# 仅解密普通内容流，绝不解密商业投放后台
+hostname = %APPEND% edith.xiaohongshu.com, -ad.xiaohongshu.com

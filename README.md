@@ -1,29 +1,24 @@
-# ⚡ Surge 全能一体化配置与模块中心 (Surge All-In-One)
+# ⚡ Surge 全能一体化配置 (Surge All-In-One)
 
-> 📌 **项目定位**：自用极致性能、低延迟、抗污染、智能分流的 Surge (macOS / iOS) 全能一体化配置库。  
+> 📌 **项目定位**：自用极致性能、低延迟、抗污染、智能分流的 Surge (macOS / iOS) 全能一体化标准配置库。  
 > 🛡️ **安全声明**：本仓库公开的所有配置均经过 **100% 物理脱敏清洗**，绝无任何真实节点公网 IP、密码或私钥证书泄露。
 
 ---
 
 ## 🚀 快速使用 (Quick Start)
 
-### 1. 全能一体化主配置文件 (`Surge_All_In_One.conf`)
 专为日常主力机打造，深度调优了现代加密 DNS、全协议混合并发与精细化分流：
-- **配置文件直链**：
+
+- **配置文件直链**（在 Surge 中点击「从 URL 下载配置」直接填入）：
   ```text
   https://raw.githubusercontent.com/qljfjut/Surge/main/Surge_All_In_One.conf
   ```
-- **导入方法**：在 Surge 点击「从 URL 下载配置」，填入上方链接；下载后在 `[Proxy]` 中填入您自己的真实服务器节点即可开箱即用。
 
-### 2. 独立功能模块 (`XiaoHongShu_Switch.sgmodule`)
-专为自媒体创作者、内容投手与运营人员设计的模式切换开关：
-- **安装直链**：
-  ```text
-  https://raw.githubusercontent.com/qljfjut/Surge/main/XiaoHongShu_Switch.sgmodule
-  ```
-- **工作机制**：
-  - **平时保持关闭**：保持纯净看帖环境，屏蔽流内推荐位与广告；
-  - **【勾选点亮】**：立即进入投手模式，全量直连放行小红书全域域名、广告流与聚光后台，并规避 MITM 解密，保障投放数据完整与后台正常登录。
+### 导入配置四步法：
+1. 打开 **Surge (macOS / iOS)**；
+2. 点击 **配置** ➔ **从 URL 安装配置**；
+3. 粘贴上方直链并下载；
+4. 进入配置文件的 `[Proxy]` 区块，将占位符替换为您自己的真实节点服务器与密码，即可开箱即用。
 
 ---
 
@@ -41,10 +36,8 @@
    - 消除代理中继导致的 NAT 降级、联机丢包与高延迟。
 4. **All-Hybrid 网络并发加速**：
    - 激活 `all-hybrid = true`，Wi-Fi 与蜂窝数据全并发协同，消除切网瞬间的断流卡顿。
-5. **拓竹 (Bambu Lab) 3D 打印机智选组**：
-   - 专属设计 `BambuLab = smart` 智能测速策略，多节点毫秒级探测，保障 3D 打印切片上传与远程摄像头推流秒开稳定。
-6. **24 大独立分流策略组**：
-   - 覆盖 Intelligence (AI 大模型)、小红书、流媒体 (YouTube/Netflix/Disney+/Spotify/TikTok)、国内主流生态 (阿里/腾讯/微信/抖音/B站/百度) 等，各司其职。
+5. **23 大独立分流策略组**：
+   - 覆盖 Intelligence (AI 大模型)、流媒体 (YouTube/Netflix/Disney+/Spotify/TikTok)、国内主流大厂生态 (阿里/腾讯/微信/抖音/B站/百度) 等，各司其职，互不干扰。
 
 ---
 

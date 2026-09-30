@@ -1,0 +1,22 @@
+#!name=抖音去广告与去商城纯净模块
+#!desc=深度净化抖音 (Douyin)：移除首页信息流广告、开屏广告、移除底部「商城」Tab 导航栏，拦截电商后台服务与穿山甲广告联盟。
+#!category=去广告
+#!author=qianliangjun
+
+[Rule]
+# 1. 拦截穿山甲广告联盟与巨量广告下发
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT
+DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT
+DOMAIN-KEYWORD,-pangolin,REJECT
+
+# 2. 拦截抖音电商中台与带货橱窗服务（去商城数据源）
+DOMAIN-SUFFIX,ecomuser.snssdk.com,REJECT
+DOMAIN-KEYWORD,ecom-api,REJECT
+
+[Script]
+# 抖音净化脚本：过滤信息流广告 + 移除底部商城 Tab + 去除商业广告 (自托管脚本闭环)
+抖音纯净版 = type=http-response,pattern=^https?:\/\/.*amemv\.com\/aweme\/v\d\/(feed|page\/settings|tab\/settings|profile\/other),requires-body=1,max-size=2097152,script-path=https://raw.githubusercontent.com/qljfjut/Surge/main/scripts/douyin.js
+
+[MITM]
+h2 = true
+hostname = %APPEND% *.amemv.com

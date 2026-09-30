@@ -17,7 +17,7 @@ DOMAIN-SUFFIX,ads-i3.xhscdn.com,REJECT
 
 [Script]
 # 小红书核心 API 信息流与搜索去广告脚本 (截获响应体 JSON 并剔除广告卡片)
-小红书信息流净化 = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/(homefeed|feed|search\/notes),requires-body=1,max-size=2097152,script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/scripts/xiaohongshu/xiaohongshu.js
+小红书信息流净化 = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/(homefeed|feed|search\/notes),requires-body=1,max-size=2097152,script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/xiaohongshu/xiaohongshu.js
 
 [MITM]
 h2 = true

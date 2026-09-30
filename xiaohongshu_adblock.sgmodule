@@ -1,0 +1,24 @@
+#!name=小红书去广告与防 P2P 盗流纯享模块
+#!desc=深度净化小红书：通过 Script 手术刀剥离信息流与搜索广告卡片，拦截网心科技 P2P 后台带宽盗流，屏蔽小红书商业广告 CDN。
+#!category=去广告
+#!author=qianliangjun
+
+[Rule]
+# 1. 拦截小红书定制网心科技 P2P 种子与带宽偷跑
+DOMAIN-SUFFIX,qiezibenpao.com,REJECT
+DOMAIN-SUFFIX,comfylink.com,REJECT
+
+# 2. 拦截小红书自有商业广告图片 CDN
+DOMAIN,ads-img-al.xhscdn.com,REJECT
+DOMAIN,ads-img-bak.xhscdn.com,REJECT
+DOMAIN-SUFFIX,ads-i1.xhscdn.com,REJECT
+DOMAIN-SUFFIX,ads-i2.xhscdn.com,REJECT
+DOMAIN-SUFFIX,ads-i3.xhscdn.com,REJECT
+
+[Script]
+# 小红书核心 API 信息流与搜索去广告脚本 (截获响应体 JSON 并剔除广告卡片)
+小红书信息流净化 = type=http-response,pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/(homefeed|feed|search\/notes),requires-body=1,max-size=2097152,script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/scripts/xiaohongshu/xiaohongshu.js
+
+[MITM]
+h2 = true
+hostname = %APPEND% edith.xiaohongshu.com, *.xiaohongshu.com
